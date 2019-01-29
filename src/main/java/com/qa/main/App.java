@@ -1,4 +1,4 @@
-package com.qa.persistence.main;
+package com.qa.main;
 
 public class App {
 

@@ -3,17 +3,18 @@ package com.qa.persistence.repository;
 import java.util.HashMap;
 import java.util.Map;
 
+import javax.enterprise.inject.Alternative;
 import javax.inject.Inject;
 
 import com.qa.persistence.domain.Account;
 import com.qa.util.JSONUtil;
 
+@Alternative
 public class AccountMapRepository implements AccountRepository{
 	
 	Map<Long, Account> accountMap = new HashMap<>();
 	
-//	@Inject
-	private JSONUtil util = new JSONUtil();
+	@Inject private JSONUtil util;
 	
 	public String getAllAccounts() {
 		return util.getJSONForObject(accountMap);
